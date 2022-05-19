@@ -2,6 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const CELSIUS_TO_FARENHEIGHT = 1.8;
+const FARENHEIGHT_TO_CELSIUS = (f: number): number => {
+  return f-32/1.8
+};
+
 function App() {
   return (
     <div className="App">
