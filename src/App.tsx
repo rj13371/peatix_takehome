@@ -1,12 +1,8 @@
 import React, { useContext } from 'react';
 import './styles/App.css';
-import { ToggleDarkMode } from './components/ToggleDarkMode';
+import { ToggleDarkMode } from './components/ToggleDarkModeButton';
 import { ThemeContext } from './context/ThemeContext';
-
-const CELSIUS_TO_FARENHEIGHT = 1.8;
-const FARENHEIGHT_TO_CELSIUS = (f: number): number => {
-  return f - 32 / 1.8;
-};
+import TemperatureConverter from './components/TemperatureConverter';
 
 function App() {
   const { dark } = useContext(ThemeContext);
@@ -14,6 +10,7 @@ function App() {
   return (
     <div className={dark ? 'Dark' : 'Light'}>
       <div className="App">
+        <TemperatureConverter />
         <ToggleDarkMode />
       </div>
     </div>
