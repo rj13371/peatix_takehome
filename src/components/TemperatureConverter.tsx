@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { InputNumber, Typography, Switch } from 'antd';
+import { InputNumber, Typography, Switch, Space } from 'antd';
 import { ITemperature } from '../types/ITemperature';
 
 const CELSIUS_TO_FARENHEIGHT = (c: number): number => {
@@ -30,28 +30,35 @@ export default function TemperatureConverter(): ReactElement {
 
   const handleOnClick = (checked: boolean, event: MouseEvent) => {
     event.preventDefault();
+    console.log(checked);
     if (checked) {
       setConversion({ celsuisToFarenheight: true });
     } else {
       setConversion({ celsuisToFarenheight: false });
     }
+    setResult(value);
+    setValue(result);
   };
+
+  console.log(value, result);
 
   return (
     <>
-      <Title>{result}</Title>
+      <Space>
+        <InputNumber
+          min={-100}
+          max={100}
+          value={value}
+          defaultValue={0}
+          onChange={convert}
+        />
+        <Title>{result}</Title>
+      </Space>
       <Switch
         defaultChecked
         onChange={handleOnClick}
         checkedChildren="°C =>°F"
         unCheckedChildren="°F =>°C"
-      />
-      <InputNumber
-        min={-100}
-        max={100}
-        value={value}
-        defaultValue={0}
-        onChange={convert}
       />
     </>
   );
