@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/peatix_takehome/static/css/main.d814da95.css",
+    "main.js": "/peatix_takehome/static/js/main.87aecddf.js",
+    "static/js/787.28cb0dcd.chunk.js": "/peatix_takehome/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/peatix_takehome/index.html",
+    "main.d814da95.css.map": "/peatix_takehome/static/css/main.d814da95.css.map",
+    "main.87aecddf.js.map": "/peatix_takehome/static/js/main.87aecddf.js.map",
+    "787.28cb0dcd.chunk.js.map": "/peatix_takehome/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d814da95.css",
+    "static/js/main.87aecddf.js"
+  ]
+}
