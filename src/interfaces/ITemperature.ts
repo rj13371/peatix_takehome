@@ -1,3 +1,3 @@
 export interface ITemperature {
-  celsuisToFarenheight: boolean;
+  celsuisToFahrenheit: boolean;
 }

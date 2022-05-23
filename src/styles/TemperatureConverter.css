@@ -1,0 +1,15 @@
+.DarkCard {
+  color: white;
+  background-color: rgb(191, 191, 191);
+}
+
+.LightCard {
+  background-color: white;
+  color: #282c34;
+}
+
+.Card {
+  font-size: 1.2rem;
+  width: 200px;
+  height: 150px;
+}

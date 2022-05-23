@@ -1,60 +1,115 @@
-import React, { ReactElement } from 'react';
-import { InputNumber, Typography, Switch, Space } from 'antd';
-import { ITemperature } from '../types/ITemperature';
+import React, { ReactElement, useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
+import { InputNumber, Typography, Switch, Space, Card, Tooltip } from 'antd';
+import { ITemperature } from '../interfaces/ITemperature';
+import '../styles/TemperatureConverter.css';
 
-const CELSIUS_TO_FARENHEIGHT = (c: number): number => {
+const CELSIUS_TO_FARENHEIT = (c: number): number => {
   return (c * 9) / 5 + 32;
 };
 
-const FARENHEIGHT_TO_CELSIUS = (f: number): number => {
+const FARENHEIT_TO_CELSIUS = (f: number): number => {
   return ((f - 32) * 5) / 9;
 };
 
-const { Title } = Typography;
+const { Text } = Typography;
 
 export default function TemperatureConverter(): ReactElement {
+  const { dark } = useContext(ThemeContext);
   const [value, setValue] = React.useState<number>(0);
   const [result, setResult] = React.useState<number>(32);
   const [conversion, setConversion] = React.useState<ITemperature>({
-    celsuisToFarenheight: true,
+    celsuisToFahrenheit: true,
   });
 
   const convert = (n: number): void => {
     setValue(n);
-    if (conversion.celsuisToFarenheight === true) {
-      setResult(CELSIUS_TO_FARENHEIGHT(n));
+    if (conversion.celsuisToFahrenheit === true) {
+      setResult(CELSIUS_TO_FARENHEIT(n));
     } else {
-      setResult(FARENHEIGHT_TO_CELSIUS(n));
+      setResult(FARENHEIT_TO_CELSIUS(n));
     }
   };
 
   const handleOnClick = (checked: boolean, event: MouseEvent) => {
     event.preventDefault();
-    console.log(checked);
     if (checked) {
-      setConversion({ celsuisToFarenheight: true });
+      setConversion({ celsuisToFahrenheit: true });
     } else {
-      setConversion({ celsuisToFarenheight: false });
+      setConversion({ celsuisToFahrenheit: false });
     }
-    setResult(value);
-    setValue(result);
+
+    if (value === null) {
+      setResult(0);
+    } else {
+      setResult(value);
+    }
+
+    if (result === null) {
+      setValue(0);
+    } else {
+      setValue(result);
+    }
   };
 
   console.log(value, result);
 
+  const valueTooltip = value ? (
+    <span className="numeric-input-title">{value ? value : '-'}</span>
+  ) : (
+    'Input a number'
+  );
+
+  const resultTooltip = result ? (
+    <span className="numeric-input-title">{result ? result : '-'}</span>
+  ) : (
+    'Conversion'
+  );
+
   return (
     <>
       <Space>
-        <InputNumber
-          min={-100}
-          max={100}
-          value={value}
-          defaultValue={0}
-          onChange={convert}
-        />
-        <Title>{result}</Title>
+        <Card
+          title={
+            conversion.celsuisToFahrenheit === false ? 'Fahrenheit' : 'Celsuis'
+          }
+          className={dark ? 'Card DarkCard' : 'Card LightCard'}
+        >
+          <Tooltip
+            trigger={['hover']}
+            title={valueTooltip}
+            placement="topLeft"
+            overlayClassName="numeric-input"
+          >
+            <InputNumber
+              aria-label="Number input"
+              size="large"
+              value={value}
+              defaultValue={0}
+              onChange={convert}
+            />
+          </Tooltip>
+        </Card>
+
+        <Card
+          title={
+            conversion.celsuisToFahrenheit === true ? 'Fahrenheit' : 'Celsuis'
+          }
+          className={dark ? 'Card DarkCard' : 'Card LightCard'}
+        >
+          <Tooltip
+            trigger={['hover']}
+            title={resultTooltip}
+            placement="topLeft"
+            overlayClassName="numeric-input"
+          >
+            <Text ellipsis={true}>{result}</Text>
+          </Tooltip>
+        </Card>
       </Space>
+
       <Switch
+        aria-label="Celsuis / Farenheight switch"
         defaultChecked
         onChange={handleOnClick}
         checkedChildren="°C =>°F"
