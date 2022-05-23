@@ -3,6 +3,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 import { InputNumber, Typography, Switch, Space, Card, Tooltip } from 'antd';
 import { ITemperature } from '../../interfaces/ITemperature';
 import '../../styles/TemperatureConverter.css';
+import { Thermometor } from '../Thermometor';
 
 const CELSIUS_TO_FARENHEIT = (c: number): number => {
   return (c * 9) / 5 + 32;
@@ -67,58 +68,63 @@ export default function TemperatureConverter(): ReactElement {
   );
 
   return (
-    <Space direction="vertical">
-      <div>
-        <Space>
-          <Card
-            title={
-              conversion.celsuisToFahrenheit === false
-                ? 'Fahrenheit'
-                : 'Celsuis'
-            }
-            className={dark ? 'Card DarkCard' : 'Card LightCard'}
-          >
-            <Tooltip
-              trigger={['hover']}
-              title={valueTooltip}
-              placement="topLeft"
-              overlayClassName="numeric-input"
+    <>
+      <Space direction="vertical">
+        <div>
+          <Space>
+            <Card
+              title={
+                conversion.celsuisToFahrenheit === false
+                  ? 'Fahrenheit'
+                  : 'Celsuis'
+              }
+              className={dark ? 'Card DarkCard' : 'Card LightCard'}
             >
-              <InputNumber
-                aria-label="Number input"
-                size="large"
-                value={value}
-                defaultValue={0}
-                onChange={convert}
-              />
-            </Tooltip>
-          </Card>
+              <Tooltip
+                trigger={['hover']}
+                title={valueTooltip}
+                placement="topLeft"
+                overlayClassName="numeric-input"
+              >
+                <InputNumber
+                  aria-label="Number input"
+                  size="large"
+                  value={value}
+                  defaultValue={0}
+                  onChange={convert}
+                />
+              </Tooltip>
+            </Card>
 
-          <Card
-            title={
-              conversion.celsuisToFahrenheit === true ? 'Fahrenheit' : 'Celsuis'
-            }
-            className={dark ? 'Card DarkCard' : 'Card LightCard'}
-          >
-            <Tooltip
-              trigger={['hover']}
-              title={resultTooltip}
-              placement="topLeft"
-              overlayClassName="numeric-input"
+            <Card
+              title={
+                conversion.celsuisToFahrenheit === true
+                  ? 'Fahrenheit'
+                  : 'Celsuis'
+              }
+              className={dark ? 'Card DarkCard' : 'Card LightCard'}
             >
-              <Text ellipsis={true}>{result}</Text>
-            </Tooltip>
-          </Card>
-        </Space>
-      </div>
+              <Tooltip
+                trigger={['hover']}
+                title={resultTooltip}
+                placement="topLeft"
+                overlayClassName="numeric-input"
+              >
+                <Text ellipsis={true}>{result}</Text>
+              </Tooltip>
+            </Card>
+            <Thermometor conversion={result} />
+          </Space>
+        </div>
 
-      <Switch
-        aria-label="Celsuis / Farenheight switch"
-        defaultChecked
-        onChange={handleOnClick}
-        checkedChildren="°C =>°F"
-        unCheckedChildren="°F =>°C"
-      />
-    </Space>
+        <Switch
+          aria-label="Celsuis / Farenheight switch"
+          defaultChecked
+          onChange={handleOnClick}
+          checkedChildren="°C =>°F"
+          unCheckedChildren="°F =>°C"
+        />
+      </Space>
+    </>
   );
 }

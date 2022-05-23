@@ -1,0 +1,31 @@
+.thermometer {
+  display: block;
+  position: relative;
+  height: 100px;
+}
+
+.tube {
+  width: 10px;
+  height: 10px;
+  border-radius: 12px;
+  background-color: red;
+  max-height: 300px;
+  transform: rotate(180deg);
+  position: absolute;
+  display: inline-block;
+  left: 3px;
+  bottom: 5px;
+  z-index: 100;
+}
+
+.thermometer-body {
+  border: 2px solid black;
+  width: 20px;
+  height: 200px !important;
+  border-radius: 12px;
+  background-color: white;
+  position: absolute;
+  display: inline-block;
+  bottom: -20px;
+  z-index: 50;
+}
