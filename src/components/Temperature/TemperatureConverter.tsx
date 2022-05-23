@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext } from 'react';
+import React, { ReactElement, useContext, useState } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import { InputNumber, Typography, Switch, Space, Card, Tooltip } from 'antd';
 import { ITemperature } from '../../interfaces/ITemperature';
@@ -17,15 +17,15 @@ const { Text } = Typography;
 
 export default function TemperatureConverter(): ReactElement {
   const { dark } = useContext(ThemeContext);
-  const [value, setValue] = React.useState<number>(0);
-  const [result, setResult] = React.useState<number>(32);
-  const [conversion, setConversion] = React.useState<ITemperature>({
-    celsuisToFahrenheit: true,
+  const [value, setValue] = useState<number>(0);
+  const [result, setResult] = useState<number>(32);
+  const [conversion, setConversion] = useState<ITemperature>({
+    formula: 'celsuisToFahrenheit',
   });
 
   const convert = (n: number): void => {
     setValue(n);
-    if (conversion.celsuisToFahrenheit === true) {
+    if (conversion.formula === 'celsuisToFahrenheit') {
       setResult(CELSIUS_TO_FARENHEIT(n));
     } else {
       setResult(FARENHEIT_TO_CELSIUS(n));
@@ -35,10 +35,12 @@ export default function TemperatureConverter(): ReactElement {
   const handleOnClick = (checked: boolean, event: MouseEvent) => {
     event.preventDefault();
     if (checked) {
-      setConversion({ celsuisToFahrenheit: true });
+      setConversion({ formula: 'celsuisToFahrenheit' });
     } else {
-      setConversion({ celsuisToFahrenheit: false });
+      setConversion({ formula: 'farenheitToCelsuis' });
     }
+
+    //If the user removes the number input and switches the conversion, input value will be null, so reset input to 0
 
     if (value === null) {
       setResult(0);
@@ -52,8 +54,6 @@ export default function TemperatureConverter(): ReactElement {
       setValue(result);
     }
   };
-
-  console.log(value, result);
 
   const valueTooltip = value ? (
     <span className="numeric-input-title">{value ? value : '-'}</span>
@@ -74,7 +74,7 @@ export default function TemperatureConverter(): ReactElement {
           <Space>
             <Card
               title={
-                conversion.celsuisToFahrenheit === false
+                conversion.formula === 'farenheitToCelsuis'
                   ? 'Fahrenheit'
                   : 'Celsuis'
               }
@@ -98,7 +98,7 @@ export default function TemperatureConverter(): ReactElement {
 
             <Card
               title={
-                conversion.celsuisToFahrenheit === true
+                conversion.formula === 'celsuisToFahrenheit'
                   ? 'Fahrenheit'
                   : 'Celsuis'
               }

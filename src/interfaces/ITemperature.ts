@@ -1,3 +1,5 @@
 export interface ITemperature {
-  celsuisToFahrenheit: boolean;
+  formula: formulaEnum;
 }
+
+type formulaEnum = 'celsuisToFahrenheit' | 'farenheitToCelsuis';
