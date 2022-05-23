@@ -67,46 +67,50 @@ export default function TemperatureConverter(): ReactElement {
   );
 
   return (
-    <>
-      <Space>
-        <Card
-          title={
-            conversion.celsuisToFahrenheit === false ? 'Fahrenheit' : 'Celsuis'
-          }
-          className={dark ? 'Card DarkCard' : 'Card LightCard'}
-        >
-          <Tooltip
-            trigger={['hover']}
-            title={valueTooltip}
-            placement="topLeft"
-            overlayClassName="numeric-input"
+    <Space direction="vertical">
+      <div>
+        <Space>
+          <Card
+            title={
+              conversion.celsuisToFahrenheit === false
+                ? 'Fahrenheit'
+                : 'Celsuis'
+            }
+            className={dark ? 'Card DarkCard' : 'Card LightCard'}
           >
-            <InputNumber
-              aria-label="Number input"
-              size="large"
-              value={value}
-              defaultValue={0}
-              onChange={convert}
-            />
-          </Tooltip>
-        </Card>
+            <Tooltip
+              trigger={['hover']}
+              title={valueTooltip}
+              placement="topLeft"
+              overlayClassName="numeric-input"
+            >
+              <InputNumber
+                aria-label="Number input"
+                size="large"
+                value={value}
+                defaultValue={0}
+                onChange={convert}
+              />
+            </Tooltip>
+          </Card>
 
-        <Card
-          title={
-            conversion.celsuisToFahrenheit === true ? 'Fahrenheit' : 'Celsuis'
-          }
-          className={dark ? 'Card DarkCard' : 'Card LightCard'}
-        >
-          <Tooltip
-            trigger={['hover']}
-            title={resultTooltip}
-            placement="topLeft"
-            overlayClassName="numeric-input"
+          <Card
+            title={
+              conversion.celsuisToFahrenheit === true ? 'Fahrenheit' : 'Celsuis'
+            }
+            className={dark ? 'Card DarkCard' : 'Card LightCard'}
           >
-            <Text ellipsis={true}>{result}</Text>
-          </Tooltip>
-        </Card>
-      </Space>
+            <Tooltip
+              trigger={['hover']}
+              title={resultTooltip}
+              placement="topLeft"
+              overlayClassName="numeric-input"
+            >
+              <Text ellipsis={true}>{result}</Text>
+            </Tooltip>
+          </Card>
+        </Space>
+      </div>
 
       <Switch
         aria-label="Celsuis / Farenheight switch"
@@ -115,6 +119,6 @@ export default function TemperatureConverter(): ReactElement {
         checkedChildren="°C =>°F"
         unCheckedChildren="°F =>°C"
       />
-    </>
+    </Space>
   );
 }
