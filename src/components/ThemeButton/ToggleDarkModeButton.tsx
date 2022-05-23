@@ -1,8 +1,8 @@
-import { ThemeContext } from '../context/ThemeContext';
+import { ThemeContext } from '../../context/ThemeContext';
 import React, { useContext } from 'react';
 import { Switch } from 'antd';
 
-export const ToggleDarkModeButton = () => {
+const ToggleDarkModeButton = () => {
   const { toggleDark } = useContext(ThemeContext);
   const handleOnClick = (checked: boolean, event: MouseEvent) => {
     event.preventDefault();
@@ -19,3 +19,5 @@ export const ToggleDarkModeButton = () => {
     </>
   );
 };
+
+export default ToggleDarkModeButton;

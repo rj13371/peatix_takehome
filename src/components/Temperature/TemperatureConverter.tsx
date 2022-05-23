@@ -1,8 +1,8 @@
 import React, { ReactElement, useContext } from 'react';
-import { ThemeContext } from '../context/ThemeContext';
+import { ThemeContext } from '../../context/ThemeContext';
 import { InputNumber, Typography, Switch, Space, Card, Tooltip } from 'antd';
-import { ITemperature } from '../interfaces/ITemperature';
-import '../styles/TemperatureConverter.css';
+import { ITemperature } from '../../interfaces/ITemperature';
+import '../../styles/TemperatureConverter.css';
 
 const CELSIUS_TO_FARENHEIT = (c: number): number => {
   return (c * 9) / 5 + 32;

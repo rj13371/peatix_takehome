@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
-import { ToggleDarkModeButton } from '../components/ToggleDarkModeButton';
-import TemperatureConverter from '../components/TemperatureConverter';
+import { ToggleDarkModeButton } from '../../components/ThemeButton';
+import TemperatureConverter from '../../components/Temperature/TemperatureConverter';
 import { Typography } from 'antd';
 
 const { Title } = Typography;

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/App.css';
-import Landing from './pages/Landing';
-import NotFound from './pages/NotFound';
+import Landing from './pages/landing/Landing';
+import NotFound from './pages/not_found/NotFound';
 
 import { ThemeContext } from './context/ThemeContext';
 
