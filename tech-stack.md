@@ -2,11 +2,11 @@
 
 ## Typescript
 
-TypeScript allows for static typing which results in fewer bugs on production and more verbose yet easier to understand code which is important when working in a team. It results in better code structuring and object-oriented programming techniques.&#x20;
+TypeScript allows for static typing which results in fewer bugs on production and more verbose yet easier to understand code which is important when working in a team and large company. It results in better code structuring and object-oriented programming techniques.&#x20;
 
 ## React
 
-I choose React for my front end framework because it is a modular, un-opinionated and has the largest community of developers and support. It's large community means it has tons of information online when it comes to bug fixing, and it also is supported by many 3rd party libraries and npm packages.&#x20;
+I choose React for my front end framework because it is a modular, un-opinionated (can structure very freely) and has a large community of developers and support. It's large community means it has tons of information online when it comes to bug fixing and finding help online, and it also is supported by many 3rd party libraries and npm packages.&#x20;
 
 ## antd
 
