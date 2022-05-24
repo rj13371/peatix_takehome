@@ -1,22 +1,13 @@
-## Installation Instructions
+---
+description: This project was designed to show my skills as a frontend developer.
+---
 
-In the project directory, you can run:
+# Introduction
 
-### `npm i`
+See deployed app [here](https://rj13371.github.io/peatix\_takehome/).
 
-Installs required packages
+The project is a simple single page web app which converts Fahrenheit to Celsius and vice versa. The app displays the output based on the formula. It also displays a thermometer animation depending on the value of the result.&#x20;
 
-### `npm start`
+![screenshot of web app](<.gitbook/assets/Screenshot from 2022-05-24 12-54-49.png>)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000/peatix_takehome](http://localhost:3000/peatix_takehome) to view it in the browser.
-
-### `npm test`
-
-Runs testing suite
-
-## Built With
-
-Typescript.\
-React.\
-antd.
+If you have any questions feel free to contact me @ [rolandmathesondev@gmail.com](https://app.gitbook.com/u/DJbHHta2O5Y1PuUPAsP6Bm34TLF3)
