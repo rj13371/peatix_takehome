@@ -4,7 +4,9 @@ description: This project was designed to show my skills as a frontend developer
 
 # Introduction
 
-See deployed app [here](https://rj13371.github.io/peatix\_takehome/).
+See Gitbook [here](https://roland-5.gitbook.io/peatix-takehome-readme/).
+
+See deployed app [here](https://rj13371.github.io/peatix_takehome/).
 
 The project is a simple single page web app which converts Fahrenheit to Celsius and vice versa. The app displays the output based on the formula. It also displays a thermometer animation depending on the value of the result.&#x20;
 
