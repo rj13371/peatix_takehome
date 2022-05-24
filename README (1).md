@@ -21,12 +21,7 @@ Open [http://localhost:3000/peatix\_takehome](http://localhost:3000/peatix\_take
 
 Runs testing suite
 
-### Built With
 
-[Typescript](https://www.typescriptlang.org/docs/).\
-[React](https://reactjs.org/docs/getting-started.html).\
-[gsap](https://greensock.com/docs/).\
-[antd](https://ant.design/docs/react/introduce).
 
 
 

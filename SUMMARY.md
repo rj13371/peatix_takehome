@@ -7,3 +7,4 @@
 * [Design](design.md)
 * [Future Improvements](future-improvements.md)
 * [Testing](testing.md)
+* [Communication](communication.md)

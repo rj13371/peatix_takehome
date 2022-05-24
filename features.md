@@ -25,4 +25,4 @@ I used Context API to manage the states application as it is a elegant and simpl
 
 ### Thermometer
 
-This is a simple component that I made using gsap, a JavaScript animation library. The thermometers scale increases (up to a maximum height) or decreases based on the output. gsap enabled me to simply animate the elements height property using React hooks. This was the first time I have used an animation library in JavaScript and it was a interesting and fun way to animate css properties. I choose gsap because the documentation for gsap was easy to understand and it is one of the most popular animation libraries.&#x20;
+This is a simple component that I made using gsap, a JavaScript animation library. The thermometers scale increases (up to a maximum height) or decreases based on the output. gsap enabled me to simply animate the elements height property using React hooks. This was the first time I have used an animation library in JavaScript and it was a interesting and fun way to animate css properties. I choose gsap because the documentation for gsap was easy to understand and it is one of the most popular JS animation libraries.&#x20;

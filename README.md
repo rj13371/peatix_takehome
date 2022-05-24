@@ -10,4 +10,11 @@ The project is a simple single page web app which converts Fahrenheit to Celsius
 
 ![screenshot of web app](<.gitbook/assets/Screenshot from 2022-05-24 12-54-49.png>)
 
-If you have any questions feel free to contact me @ [rolandmathesondev@gmail.com](https://app.gitbook.com/u/DJbHHta2O5Y1PuUPAsP6Bm34TLF3)
+If you have any questions feel free to contact me @ [rolandmathesondev@gmail.com](https://app.gitbook.com/u/DJbHHta2O5Y1PuUPAsP6Bm34TLF3)\
+\
+**Built with:** \
+\
+[Typescript](https://www.typescriptlang.org/docs/).\
+[React](https://reactjs.org/docs/getting-started.html).\
+[gsap](https://greensock.com/docs/).\
+[antd](https://ant.design/docs/react/introduce).
