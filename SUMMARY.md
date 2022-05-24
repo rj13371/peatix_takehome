@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Installation](<README (1).md>)
+* [Installation](installation.md)
 * [Features](features.md)
 * [Tech Stack](tech-stack.md)
 * [Design](design.md)
