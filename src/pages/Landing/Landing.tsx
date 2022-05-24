@@ -1,14 +1,13 @@
 import React, { ReactElement } from 'react';
-import { ToggleDarkModeButton } from '../../components/ThemeButton';
-import { TemperatureConverter } from '../../components/Temperature/';
-import { Typography, Space } from 'antd';
-
-const { Title } = Typography;
+import { ToggleDarkModeButton } from '../../features/Light/DarkTheme';
+import { TemperatureConverter } from '../../features/Temperature/TemperatureConverter';
+import { Space } from 'antd';
+import { Header } from '../../components/header';
 
 export default function Landing(): ReactElement {
   return (
     <Space direction="vertical">
-      <p>Temperature Converter</p>
+      <Header text={'Temperature Converter'} />
       <TemperatureConverter />
       <ToggleDarkModeButton />
     </Space>

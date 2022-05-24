@@ -1,5 +1,5 @@
 import React, { ReactElement, useEffect, useRef } from 'react';
-import { IThermometor } from '../../interfaces/IThermometor';
+import { IThermometor } from './IThermometor';
 import { gsap } from 'gsap';
 import './Thermometor.css';
 

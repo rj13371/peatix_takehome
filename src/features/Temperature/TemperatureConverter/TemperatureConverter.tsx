@@ -1,8 +1,8 @@
 import React, { ReactElement, useContext, useState } from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
+import { ThemeContext } from '../../../state/ThemeContext';
 import { InputNumber, Typography, Switch, Space, Card, Tooltip } from 'antd';
-import { ITemperature } from '../../interfaces/ITemperature';
-import '../../styles/TemperatureConverter.css';
+import { ITemperature } from './ITemperature';
+import './TemperatureConverter.css';
 import { Thermometor } from '../Thermometor';
 
 const CELSIUS_TO_FARENHEIT = (c: number): number => {

@@ -1,5 +1,5 @@
 import React, { useState, FC, ReactNode } from 'react';
-import { IThemeContext } from '../interfaces/ITheme';
+import { IThemeContext } from './ITheme';
 
 interface ThemeProviderProps {
   children?: ReactNode;
