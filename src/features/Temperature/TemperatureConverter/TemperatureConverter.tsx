@@ -17,14 +17,18 @@ const { Text } = Typography;
 
 export default function TemperatureConverter(): ReactElement {
   const { dark } = useContext(ThemeContext);
-  const [value, setValue] = useState<number>(0);
+  const [conversionInput, setConversionInput] = useState<number>(0);
   const [result, setResult] = useState<number>(32);
   const [conversion, setConversion] = useState<ITemperature>({
     formula: 'celsuisToFahrenheit',
   });
 
+  //takes in a number and converts it to celsuis or farenheit, updates the conversion result state
+  //Params: n: number
+  //Returns: void
+
   const convert = (n: number): void => {
-    setValue(n);
+    setConversionInput(n);
     if (conversion.formula === 'celsuisToFahrenheit') {
       setResult(CELSIUS_TO_FARENHEIT(n));
     } else {
@@ -40,23 +44,25 @@ export default function TemperatureConverter(): ReactElement {
       setConversion({ formula: 'farenheitToCelsuis' });
     }
 
-    //If the user removes the number input and switches the conversion, input value will be null, so reset input to 0
+    //If the user removes the number input and switches the conversion, conversionInput will be null, so reset input to 0
 
-    if (value === null) {
+    if (conversionInput === null) {
       setResult(0);
     } else {
-      setResult(value);
+      setResult(conversionInput);
     }
 
     if (result === null) {
-      setValue(0);
+      setConversionInput(0);
     } else {
-      setValue(result);
+      setConversionInput(result);
     }
   };
 
-  const valueTooltip = value ? (
-    <span className="numeric-input-title">{value ? value : '-'}</span>
+  const valueTooltip = conversionInput ? (
+    <span className="numeric-input-title">
+      {conversionInput ? conversionInput : '-'}
+    </span>
   ) : (
     'Input a number'
   );
@@ -89,7 +95,7 @@ export default function TemperatureConverter(): ReactElement {
                 <InputNumber
                   aria-label="Number input"
                   size="large"
-                  value={value}
+                  value={conversionInput}
                   defaultValue={0}
                   onChange={convert}
                 />
@@ -113,7 +119,13 @@ export default function TemperatureConverter(): ReactElement {
                 <Text ellipsis={true}>{result}</Text>
               </Tooltip>
             </Card>
-            <Thermometor conversion={result} />
+            <Thermometor
+              conversion={
+                conversion.formula === 'celsuisToFahrenheit'
+                  ? result
+                  : conversionInput
+              }
+            />
           </Space>
         </div>
 

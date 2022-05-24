@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Landing from './pages/Landing/Landing';
 import NotFound from './pages/NotFound/NotFound';
-
 import { ThemeContext } from './state/ThemeContext';
 
 function App() {

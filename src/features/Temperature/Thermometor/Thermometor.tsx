@@ -3,6 +3,10 @@ import { IThermometor } from './IThermometor';
 import { gsap } from 'gsap';
 import './Thermometor.css';
 
+//takes in a number from the temperature converter sibling component and changes the elements height propery
+//Params: conversion: number
+//Returns: ReactElement
+
 export default function Thermometor({
   conversion,
 }: IThermometor): ReactElement {
