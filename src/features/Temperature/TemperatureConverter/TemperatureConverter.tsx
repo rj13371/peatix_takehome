@@ -96,6 +96,7 @@ export default function TemperatureConverter(): ReactElement {
                 overlayClassName="numeric-input"
               >
                 <InputNumber
+                  type="number"
                   aria-label="Number input"
                   size="large"
                   value={conversionInput}
