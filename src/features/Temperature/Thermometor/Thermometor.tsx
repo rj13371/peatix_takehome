@@ -5,7 +5,7 @@ import './Thermometor.css';
 
 //takes in a number from the temperature converter sibling component and changes the elements height propery
 //Params: conversion: number
-//Returns: ReactElement
+//Returns: divs in the shape of a thermometor
 
 export default function Thermometor({
   conversion,
