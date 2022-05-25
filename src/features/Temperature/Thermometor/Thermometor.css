@@ -5,22 +5,24 @@
 }
 
 .tube {
-  width: 10px;
-  height: 10px;
-  border-radius: 12px;
   background-color: red;
-  max-height: 300px;
-  transform: rotate(180deg);
-  position: absolute;
-  display: inline-block;
-  left: 5px;
+  border-radius: 12px;
   bottom: -8px;
+  display: inline-block;
+  height: 10px;
+  left: 7pt;
+  max-height: 300px;
+  min-height: 0px;
+  position: absolute;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  width: 5px;
   z-index: 100;
 }
 
 .thermometer-body {
   border: 2px solid black;
-  width: 20px;
+  width: 22px;
   height: 200px !important;
   border-radius: 12px;
   background-color: white;
@@ -46,14 +48,13 @@
 }
 
 .thermometer-mercury {
-  width: 20px;
-  height: 20px;
-  border-radius: 22px;
   background-color: red;
-  position: absolute;
+  border-radius: 22px;
+  bottom: 5px;
   display: inline-block;
-  bottom: -17px;
-  left: 3px;
-  bottom: 4px;
+  height: 17px;
+  left: 5pt;
+  position: absolute;
+  width: 16px;
   z-index: 52;
 }

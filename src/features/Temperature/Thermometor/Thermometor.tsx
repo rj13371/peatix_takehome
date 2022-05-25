@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useRef } from 'react';
+import React, { ReactElement, useLayoutEffect, useRef } from 'react';
 import { IThermometor } from './IThermometor';
 import { gsap } from 'gsap';
 import './Thermometor.css';
@@ -12,10 +12,16 @@ export default function Thermometor({
 }: IThermometor): ReactElement {
   const boxRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    gsap.to(boxRef.current, {
+  //useLayoutEffect is the same as useEffect but runs before DOM has been loaded
+  useLayoutEffect(() => {
+    const animation = gsap.to(boxRef.current, {
       height: conversion,
     });
+
+    // cleanup function will be called when component is removed
+    return () => {
+      animation.kill();
+    };
   }, [conversion]);
 
   return (
