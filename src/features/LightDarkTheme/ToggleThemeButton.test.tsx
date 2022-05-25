@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import ToggleDarkModeButton from './ToggleThemeButton';
+import { ToggleThemeButton } from './index';
 
 test('Test theme button toggle', () => {
-  render(<ToggleDarkModeButton />);
+  render(<ToggleThemeButton />);
   const buttonEl = screen.getByText(/🌙/i);
 
   userEvent.click(buttonEl);

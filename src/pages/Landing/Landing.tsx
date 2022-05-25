@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { ToggleDarkModeButton } from '../../features/Light/DarkTheme';
+import { ToggleThemeButton } from '../../features/LightDarkTheme/index';
 import { TemperatureConverter } from '../../features/Temperature/TemperatureConverter';
 import { Space } from 'antd';
 import { Header } from '../../components/header';
@@ -9,7 +9,7 @@ export default function Landing(): ReactElement {
     <Space direction="vertical">
       <Header text={'Temperature Converter'} />
       <TemperatureConverter />
-      <ToggleDarkModeButton />
+      <ToggleThemeButton />
     </Space>
   );
 }
