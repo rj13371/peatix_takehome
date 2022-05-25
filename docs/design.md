@@ -4,7 +4,11 @@
 
 \
 \
-I brushed up on Clean Architecture before starting this project. According to this [article ](https://dev.to/bespoyasov/clean-architecture-on-frontend-4311)_"The clean architecture is a way of separating responsibilities and parts of functionality according to their proximity to the application domain... Clean Architecture is often referred to as a three-layer architecture, because the functionality in it is divided into layers."_ . Although this project is simple and is only client side based, I still attempted to structure and write my code according to this paradigm. I did this mainly by separating my code by feature rather then by layers, keeping code independent and modular, and keeping imports/require statements clean.
+I brushed up on Clean Architecture before starting this project. According to this [article ](https://dev.to/bespoyasov/clean-architecture-on-frontend-4311)_"The clean architecture is a way of separating responsibilities and parts of functionality according to their proximity to the application domain... Clean Architecture is often referred to as a three-layer architecture, because the functionality in it is divided into layers."._ \
+__\
+__The goal of any system designer should be to build any project that can be easily disassembled and reassembled, while also having that system be dynamic and change based on new requirements. In practical terms, this means writing code that is easy to maintain and refactor. \
+\
+Although this project is simple and is only client side based, I still attempted to structure and write my code according to this paradigm. I did this mainly by separating my code by feature rather then by layers, keeping code independent and modular, and keeping imports/require statements consistent.
 
 ## Code Structure
 

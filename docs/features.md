@@ -9,7 +9,6 @@ description: Implemented Features and Rationale
 This component takes in a number input and outputs Fahrenheit to Celsius or vice versa. The user can switch conversions using a toggle button. It uses an antd number input component to handle user input. It only will convert the value if a proper number string is inputted.
 
 Edge-cases:\
-If the user inputs a non number string, the output will remain the same based on the previous valid number.\
 \
 If the user enters too large of a value, the input/output will show a tool tip with the overflowed value.\
 \

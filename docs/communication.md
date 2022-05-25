@@ -10,18 +10,15 @@ description: Examples of my process of documenting code, tasks and pull requests
 
 ```
   //takes in a number and converts it to celsuis or farenheit, updates the conversion result state
-  //toFixed converts a number to a string with a fixed decimal point. Number then converts a string to a number.
   //Params: n: number
-  //Returns: void, sets result state to the output which is then consumed by the UI
+  //Returns: void
 
   const convert = (n: number): void => {
     setConversionInput(n);
     if (conversion.formula === 'celsuisToFahrenheit') {
-      const farenheit = CELSIUS_TO_FARENHEIT(n);
-      setResult(Number(farenheit.toFixed(4)));
+      setResult(CELSIUS_TO_FARENHEIT(n));
     } else {
-      const celsuis = FARENHEIT_TO_CELSIUS(n);
-      setResult(Number(celsuis.toFixed(4)));
+      setResult(FARENHEIT_TO_CELSIUS(n));
     }
   };
 ```
@@ -30,7 +27,7 @@ description: Examples of my process of documenting code, tasks and pull requests
 
 {% embed url="https://github.com/rj13371/peatix_takehome/pull/8" %}
 
-**Task Board Example using Zenhub (Agile Methodology)**\
+**Task Board Example using Zenhub(or Trello/Jira)**\
 
 
 {% embed url="https://github.com/rj13371/peatix_takehome/issues" %}

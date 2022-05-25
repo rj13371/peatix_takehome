@@ -11,7 +11,7 @@ When I added the toFixed() method to my convert function in order to only have t
 
 ## React
 
-I choose React for my front end framework because it is a modular, un-opinionated (can structure very freely) and has a large community of developers and support. It's large community means it has tons of information online when it comes to bug fixing and finding help online, and it also is supported by many 3rd party libraries and npm packages.&#x20;
+I choose React for my front end framework because it is a modular, un-opinionated (can structure very freely) and has a large community of developers and support. It's large community means it has tons of information online when it comes to bug fixing and finding help online, and it also is supported by many 3rd party libraries and npm packages. I also used create-react-app to take care of webpack bundling.
 
 ## antd
 
