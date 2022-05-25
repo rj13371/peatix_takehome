@@ -13,8 +13,8 @@
   transform: rotate(180deg);
   position: absolute;
   display: inline-block;
-  left: 3px;
-  bottom: 5px;
+  left: 5px;
+  bottom: -8px;
   z-index: 100;
 }
 
@@ -28,4 +28,32 @@
   display: inline-block;
   bottom: -20px;
   z-index: 50;
+}
+
+.thermometer-bulb {
+  border: 2px solid black;
+  width: 32px;
+  height: 32px;
+  border-radius: 22px;
+  background-color: white;
+  position: absolute;
+  display: inline-block;
+  bottom: -17px;
+  left: -5px;
+  bottom: -23px;
+  border-top: 0.9px solid #fff;
+  z-index: 51;
+}
+
+.thermometer-mercury {
+  width: 20px;
+  height: 20px;
+  border-radius: 22px;
+  background-color: red;
+  position: absolute;
+  display: inline-block;
+  bottom: -17px;
+  left: 3px;
+  bottom: 4px;
+  z-index: 52;
 }

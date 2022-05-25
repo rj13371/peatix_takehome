@@ -21,8 +21,10 @@ export default function Thermometor({
   return (
     <div className="thermometer">
       {' '}
-      <div className="thermometer-body">
-        <div className="tube" ref={boxRef}></div>{' '}
+      <div className="thermometer-body"> </div>
+      <div className="tube" ref={boxRef}></div>
+      <div className="thermometer-bulb">
+        <div className="thermometer-mercury"></div>
       </div>
     </div>
   );
