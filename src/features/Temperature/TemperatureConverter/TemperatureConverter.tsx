@@ -20,31 +20,31 @@ export default function TemperatureConverter(): ReactElement {
   const [conversionInput, setConversionInput] = useState<number>(0);
   const [result, setResult] = useState<number>(32);
   const [conversion, setConversion] = useState<ITemperature>({
-    formula: 'celsuisToFahrenheit',
+    formula: 'celsiusToFahrenheit',
   });
 
-  //takes in a number and converts it to celsuis or farenheit, updates the conversion result state
+  //takes in a number and converts it to celsius or farenheit, updates the conversion result state
   //toFixed converts a number to a string with a fixed decimal point. Number then converts a string to a number.
   //Params: n: number
   //Returns: void, sets result state to the output which is then consumed by the UI
 
   const convert = (n: number): void => {
     setConversionInput(n);
-    if (conversion.formula === 'celsuisToFahrenheit') {
+    if (conversion.formula === 'celsiusToFahrenheit') {
       const farenheit = CELSIUS_TO_FARENHEIT(n);
       setResult(Number(farenheit.toFixed(4)));
     } else {
-      const celsuis = FARENHEIT_TO_CELSIUS(n);
-      setResult(Number(celsuis.toFixed(4)));
+      const celsius = FARENHEIT_TO_CELSIUS(n);
+      setResult(Number(celsius.toFixed(4)));
     }
   };
 
   const handleOnClick = (checked: boolean, event: MouseEvent) => {
     event.preventDefault();
     if (checked) {
-      setConversion({ formula: 'celsuisToFahrenheit' });
+      setConversion({ formula: 'celsiusToFahrenheit' });
     } else {
-      setConversion({ formula: 'farenheitToCelsuis' });
+      setConversion({ formula: 'farenheitTocelsius' });
     }
 
     //If the user removes the number input and switches the conversion, conversionInput will be null, so reset input to 0
@@ -83,9 +83,9 @@ export default function TemperatureConverter(): ReactElement {
           <Space>
             <Card
               title={
-                conversion.formula === 'farenheitToCelsuis'
+                conversion.formula === 'farenheitTocelsius'
                   ? 'Fahrenheit'
-                  : 'Celsuis'
+                  : 'Celsius'
               }
               className={dark ? 'Card DarkCard' : 'Card LightCard'}
             >
@@ -108,9 +108,9 @@ export default function TemperatureConverter(): ReactElement {
 
             <Card
               title={
-                conversion.formula === 'celsuisToFahrenheit'
+                conversion.formula === 'celsiusToFahrenheit'
                   ? 'Fahrenheit'
-                  : 'Celsuis'
+                  : 'Celsius'
               }
               className={dark ? 'Card DarkCard' : 'Card LightCard'}
             >
@@ -125,7 +125,7 @@ export default function TemperatureConverter(): ReactElement {
             </Card>
             <Thermometor
               conversion={
-                conversion.formula === 'celsuisToFahrenheit'
+                conversion.formula === 'celsiusToFahrenheit'
                   ? result
                   : conversionInput
               }
@@ -134,7 +134,7 @@ export default function TemperatureConverter(): ReactElement {
         </div>
 
         <Switch
-          aria-label="Celsuis / Farenheight switch"
+          aria-label="Celsius / Farenheight switch"
           defaultChecked
           onChange={handleOnClick}
           checkedChildren="°C =>°F"

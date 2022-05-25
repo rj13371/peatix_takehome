@@ -7,18 +7,18 @@ TypeScript allows for static typing which results in fewer bugs on production an
 Using TypeScript can save people and companies precious time on trivial bugs and typos.\
 \
 For example:\
-When I added the toFixed() method to my convert function in order to only have the output be maximum 4 decimals, TypeScript threw an error that my CELSUIS_TO_FARENHEIT function only takes in numbers, not strings. I had forgotten that toFixed returns a string instead of a number. What could have happened if I used regular JavaScript is that my CELSUIS_TO_FARENHEIT function would not properly calculate the string Celsius var(instead of a number) to a Fahrenheit value, and could have wasted time on this bug.&#x20;
+When I added the toFixed() method to my convert function in order to only have the output be maximum 4 decimals, TypeScript threw an error that my celsius_TO_FARENHEIT function only takes in numbers, not strings. I had forgotten that toFixed returns a string instead of a number. What could have happened if I used regular JavaScript is that my celsius_TO_FARENHEIT function would not properly calculate the string Celsius var(instead of a number) to a Fahrenheit value, and could have wasted time on this bug.&#x20;
 
 ```
   const convert = (n: number): void => {
     setConversionInput(n);
-    if (conversion.formula === 'celsuisToFahrenheit') {
+    if (conversion.formula === 'celsiusToFahrenheit') {
       const farenheit = CELSIUS_TO_FARENHEIT(n);
       setResult(farenheit.toFixed(4));
       // ERROR expecting number instead of string!!
     } else {
-      const celsuis = FARENHEIT_TO_CELSIUS(n);
-      setResult(Number(celsuis.toFixed(4)));
+      const celsius = FARENHEIT_TO_CELSIUS(n);
+      setResult(Number(celsius.toFixed(4)));
     }
   };
 ```

@@ -9,19 +9,19 @@ description: Examples of my process of documenting code, tasks and pull requests
 **Example of how to write a function in development**
 
 ```
-  //takes in a number and converts it to celsuis or farenheit, updates the conversion result state
+  //takes in a number and converts it to celsius or farenheit, updates the conversion result state
   //toFixed converts a number to a string with a fixed decimal point. Number then converts a string to a number.
   //Params: n: number
   //Returns: void, sets result state to the output which is then consumed by the UI
 
   const convert = (n: number): void => {
     setConversionInput(n);
-    if (conversion.formula === 'celsuisToFahrenheit') {
+    if (conversion.formula === 'celsiusToFahrenheit') {
       const farenheit = CELSIUS_TO_FARENHEIT(n);
       setResult(Number(farenheit.toFixed(4)));
     } else {
-      const celsuis = FARENHEIT_TO_CELSIUS(n);
-      setResult(Number(celsuis.toFixed(4)));
+      const celsius = FARENHEIT_TO_CELSIUS(n);
+      setResult(Number(celsius.toFixed(4)));
     }
   };
 ```
@@ -37,6 +37,5 @@ description: Examples of my process of documenting code, tasks and pull requests
 {% embed url="https://github.com/rj13371/peatix_takehome/pull/8" %}
 
 **Task Board Example using Zenhub (Agile Methodology)**\
-
 
 {% embed url="https://github.com/rj13371/peatix_takehome/issues" %}
