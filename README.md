@@ -1,7 +1,3 @@
----
-description: This project was designed to show my skills as a frontend developer.
----
-
 # Introduction
 
 See Gitbook [here](https://roland-5.gitbook.io/peatix-takehome-readme/).
